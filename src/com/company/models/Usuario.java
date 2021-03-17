@@ -1,6 +1,8 @@
 package com.company.models;
 
 public class Usuario {
+    int idade;
+    boolean nacionalidade;
 
     public static boolean verificarIdade(int idade) {
         if(idade >=18) {
@@ -8,8 +10,30 @@ public class Usuario {
             return true;
         } else {
             System.out.println("nao é maior de idade");
+            return false;
         }
-        return false;
+
+    }
+
+    public Usuario(int idade, boolean nacionalidade) {
+        this.idade = idade;
+        this.nacionalidade = nacionalidade;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public boolean getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(boolean nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
     public static boolean verificarNacionalidade(boolean nacionalidade) {
@@ -20,6 +44,7 @@ public class Usuario {
             System.out.println("O usuario nao é brasileiro");
             return false;
         }
+
     }
 
     public  boolean cadastrar(int idade, boolean nacionalidade) {
